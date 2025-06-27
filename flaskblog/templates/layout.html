@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='main.css') }}">
+    <link rel="icon" type="image/x-icon" href="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCAzOTUuNTIgMjQ3LjIiIGhlaWdodD0iMjQ3LjIiIHdpZHRoPSIzOTUuNTIiPjxnPjxzdmcvPjwvZz48Zz48c3ZnIHZpZXdCb3g9IjAgMCAzOTUuNTIgMjQ3LjIiIGhlaWdodD0iMjQ3LjIiIHdpZHRoPSIzOTUuNTIiPjxnIHRyYW5zZm9ybT0ibWF0cml4KDEsMCwwLDEsNzUuNTQ0MzIsOTYuMDczMTY0MDE1MTQxODQpIj48c3ZnIHZpZXdCb3g9IjAgMCAyNDQuNDMxMzU5OTk5OTk5OTggNTUuMDUzNjcxOTY5NzE2MzEiIGhlaWdodD0iNTUuMDUzNjcxOTY5NzE2MzEiIHdpZHRoPSIyNDQuNDMxMzU5OTk5OTk5OTgiPjxnPjxzdmcgdmlld0JveD0iMCAwIDMxMy43NzA5OTg0NjYyNjg4NSA3MC42NzExNTEyOTI0MjE0MyIgaGVpZ2h0PSI1NS4wNTM2NzE5Njk3MTYzMSIgd2lkdGg9IjI0NC40MzEzNTk5OTk5OTk5OCI+PGcgdHJhbnNmb3JtPSJtYXRyaXgoMSwwLDAsMSw2OS4zMzk2Mzg0NjYyNjg4NywwKSI+PHN2ZyB2aWV3Qm94PSIwIDAgMjQ0LjQzMTM1OTk5OTk5OTk4IDcwLjY3MTE1MTI5MjQyMTQzIiBoZWlnaHQ9IjcwLjY3MTE1MTI5MjQyMTQzIiB3aWR0aD0iMjQ0LjQzMTM1OTk5OTk5OTk4Ij48ZyBpZD0idGV4dGJsb2NrdHJhbnNmb3JtIj48c3ZnIHZpZXdCb3g9IjAgMCAyNDQuNDMxMzU5OTk5OTk5OTggNzAuNjcxMTUxMjkyNDIxNDMiIGhlaWdodD0iNzAuNjcxMTUxMjkyNDIxNDMiIHdpZHRoPSIyNDQuNDMxMzU5OTk5OTk5OTgiIGlkPSJ0ZXh0YmxvY2siPjxnPjxzdmcgdmlld0JveD0iMCAwIDI0NC40MzEzNTk5OTk5OTk5OCA3MC42NzExNTEyOTI0MjE0MyIgaGVpZ2h0PSI3MC42NzExNTEyOTI0MjE0MyIgd2lkdGg9IjI0NC40MzEzNTk5OTk5OTk5OCI+PGcgdHJhbnNmb3JtPSJtYXRyaXgoMSwwLDAsMSwwLDApIj48c3ZnIHdpZHRoPSIyNDQuNDMxMzU5OTk5OTk5OTgiIHZpZXdCb3g9IjQuNSAtMzUuNCAxMjQuNTAzNzM0Mzc1IDM2IiBoZWlnaHQ9IjcwLjY3MTE1MTI5MjQyMTQzIiBkYXRhLXBhbGV0dGUtY29sb3I9IiNlZDNiNDMiPjxnIHRyYW5zZm9ybT0ibWF0cml4KDEsMCwwLDEsMCwwKSI+PGc+PHN2ZyB3aWR0aD0iMTUuMDA5MTU2MjUiIHZpZXdCb3g9IjMuMTYgLTM2LjM2IDY1Ljk4IDM2LjM2IiBoZWlnaHQ9IjguMjcyIiBkYXRhLXBhbGV0dGUtY29sb3I9IiNlZDNiNDMiIGlkPSJzY3JpcHRlbGVtZW50IiB4PSIxMTMuOTk0NTc4MTI0OTk5OTkiIHk9Ii04LjI3MiI+PHBhdGggZD0iTTEwLjg1IDBMMy4xNiAwIDMuMTYtMzYuMzYgMTAuODUtMzYuMzYgMTAuODUtMjEuMzYgMjYuNDYtMjEuMzYgMjYuNDYtMzYuMzYgMzQuMTMtMzYuMzYgMzQuMTMgMCAyNi40NiAwIDI2LjQ2LTE1LjAyIDEwLjg1LTE1LjAyIDEwLjg1IDBaTTQ4LjE1IDBMNDAuNDYgMCA0MC40Ni0zNi4zNiA1NC44MS0zNi4zNlE1OC45My0zNi4zNiA2MS44NS0zNC45IDY0Ljc3LTMzLjQzIDY2LjMxLTMwLjc2IDY3Ljg0LTI4LjA5IDY3Ljg0LTI0LjQ5TDY3Ljg0LTI0LjQ5UTY3Ljg0LTIwLjg2IDY2LjI4LTE4LjI2IDY0LjcyLTE1LjY2IDYxLjc2LTE0LjI4IDU4LjgtMTIuODkgNTQuNjEtMTIuODlMNTQuNjEtMTIuODkgNDUuMDEtMTIuODkgNDUuMDEtMTkuMDcgNTMuMzctMTkuMDdRNTUuNTctMTkuMDcgNTcuMDMtMTkuNjcgNTguNDgtMjAuMjggNTkuMi0yMS40OCA1OS45Mi0yMi42OSA1OS45Mi0yNC40OUw1OS45Mi0yNC40OVE1OS45Mi0yNi4zIDU5LjItMjcuNTQgNTguNDgtMjguNzggNTcuMDItMjkuNDMgNTUuNTYtMzAuMDggNTMuMzQtMzAuMDhMNTMuMzQtMzAuMDggNDguMTUtMzAuMDggNDguMTUgMFpNNTEuODEtMTYuNTVMNjAuMS0xNi41NSA2OS4xNCAwIDYwLjY1IDAgNTEuODEtMTYuNTVaIiBvcGFjaXR5PSIxIiB0cmFuc2Zvcm09Im1hdHJpeCgxLDAsMCwxLDAsMCkiIGZpbGw9IiNmZmZmZmYiIGNsYXNzPSJ1bmRlZmluZWQtMTIzIiBkYXRhLWZpbGwtcGFsZXR0ZS1jb2xvcj0icHJpbWFyeSIgaWQ9InRrLTEyMyIvPjwvc3ZnPjwvZz48L2c+PGcgY2xhc3M9IndvcmRtYXJrLXRleHQtMCIgZGF0YS1maWxsLXBhbGV0dGUtY29sb3I9InByaW1hcnkiIGlkPSJ0ZXh0LTAiIGZpbGw9IiNmZmZmZmYiPjxwYXRoIGQ9Ik0xNC42IDAuNEwxNC42IDAuNFExMS41NSAwLjQgOC44MyAwLjI1IDYuMSAwLjEgNC41LTAuMUw0LjUtMC4xIDQuNS0zNC45UTYuMjUtMzUuMSA4Ljg1LTM1LjI1IDExLjQ1LTM1LjQgMTQuOC0zNS40TDE0LjgtMzUuNFEyMS4yLTM1LjQgMjQuNjUtMzIuOTggMjguMS0zMC41NSAyOC4xLTI2LjRMMjguMS0yNi40UTI4LjEtMjMuNjUgMjYuNjMtMjEuNzMgMjUuMTUtMTkuOCAyMi4zNS0xOC41NUwyMi4zNS0xOC41NVEyNS43NS0xNy4zNSAyNy41LTE1LjIzIDI5LjI1LTEzLjEgMjkuMjUtMTBMMjkuMjUtMTBRMjkuMjUtNS4yNSAyNS41LTIuNDMgMjEuNzUgMC40IDE0LjYgMC40Wk05LjI1LTMxLjNMOS4yNS0xOS45IDE0Ljc1LTE5LjlRMTguNy0xOS45IDIxLjAzLTIxLjU1IDIzLjM1LTIzLjIgMjMuMzUtMjUuOEwyMy4zNS0yNS44UTIzLjM1LTI4LjYgMjEuMDUtMzAuMDggMTguNzUtMzEuNTUgMTQuNzUtMzEuNTVMMTQuNzUtMzEuNTVRMTMuMS0zMS41NSAxMS43NS0zMS40OCAxMC40LTMxLjQgOS4yNS0zMS4zTDkuMjUtMzEuM1pNMTQuOTUtMy41NUwxNC45NS0zLjU1UTE5LjQtMy41NSAyMS45LTUuMTUgMjQuNC02Ljc1IDI0LjQtOS44TDI0LjQtOS44UTI0LjQtMTIuOCAyMS45NS0xNC41IDE5LjUtMTYuMiAxNC45NS0xNi4yTDE0Ljk1LTE2LjIgOS4yNS0xNi4yIDkuMjUtMy44NVExMS45LTMuNTUgMTQuOTUtMy41NVpNNDQgMC42TDQ0IDAuNlE0MS43NSAwLjYgMzkuNzUtMC4zNSAzNy43NS0xLjMgMzYuNS0zLjQzIDM1LjI1LTUuNTUgMzUuMjUtOS4xTDM1LjI1LTkuMSAzNS4yNS0yNiAzOS43NS0yNiAzOS43NS05LjdRMzkuNzUtNi42NSA0MS4wNS01LjAzIDQyLjM1LTMuNCA0NC44NS0zLjRMNDQuODUtMy40UTQ2LjktMy40IDQ4LjgyLTQuMjMgNTAuNzUtNS4wNSA1Mi4yNS02LjQ1TDUyLjI1LTYuNDUgNTIuMjUtMjYgNTYuNzUtMjYgNTYuNzUtNi43NVE1Ni43NS00LjYgNTcuNjctMy45MyA1OC42LTMuMjUgNTkuNy0zLjI1TDU5LjctMy4yNSA1OC43NSAwLjI1UTU0LjEgMC4yNSA1My0zLjQ1TDUzLTMuNDVRNTEuMjUtMS42NSA0OC45NS0wLjUzIDQ2LjY1IDAuNiA0NCAwLjZaTTcyLjcgMC42TDcyLjcgMC42UTY5Ljc1IDAuNiA2Ny4zNy0wLjE1IDY1LTAuOSA2My40NS0yLjFMNjMuNDUtMi4xIDY1LjM1LTUuODVRNjYuNjUtNC43NSA2OC42Mi00LjAzIDcwLjYtMy4zIDcyLjg1LTMuM0w3Mi44NS0zLjNRNzUuNjUtMy4zIDc3LjA3LTQuMjMgNzguNS01LjE1IDc4LjUtNi42TDc4LjUtNi42UTc4LjUtNy42NSA3Ny45Ny04LjQ1IDc3LjQ1LTkuMjUgNzYuMDUtMTAuMDMgNzQuNjUtMTAuOCA3Mi0xMS43TDcyLTExLjdRNjguMzUtMTIuOTUgNjYuNTItMTQuNjggNjQuNy0xNi40IDY0LjctMTkuNDVMNjQuNy0xOS40NVE2NC43LTIyLjQ1IDY3LjMyLTI0LjUzIDY5Ljk1LTI2LjYgNzQuNi0yNi42TDc0LjYtMjYuNlE3Ny4xLTI2LjYgNzkuMDUtMjYuMDggODEtMjUuNTUgODIuNTUtMjQuNzVMODIuNTUtMjQuNzUgODEuMy0yMS4wNVE3OS45NS0yMS44NSA3OC4yMi0yMi4zNSA3Ni41LTIyLjg1IDc0LjQtMjIuODVMNzQuNC0yMi44NVE3MS44LTIyLjg1IDcwLjQ1LTIxLjggNjkuMS0yMC43NSA2OS4xLTE5LjVMNjkuMS0xOS41UTY5LjEtMTguMyA3MC4xNS0xNy40NSA3MS4yLTE2LjYgNzQuMjUtMTUuNkw3NC4yNS0xNS42UTc5LjItMTMuOTUgODEuMTUtMTEuOTUgODMuMS05Ljk1IDgzLjEtNi45NUw4My4xLTYuOTVRODMuMS0zLjQ1IDgwLjI3LTEuNDMgNzcuNDUgMC42IDcyLjcgMC42Wk05Ni4wOSAwLjZMOTYuMDkgMC42UTkzLjE0IDAuNiA5MC43Ny0wLjE1IDg4LjM5LTAuOSA4Ni44NC0yLjFMODYuODQtMi4xIDg4Ljc0LTUuODVROTAuMDQtNC43NSA5Mi4wMi00LjAzIDkzLjk5LTMuMyA5Ni4yNC0zLjNMOTYuMjQtMy4zUTk5LjA0LTMuMyAxMDAuNDctNC4yMyAxMDEuODktNS4xNSAxMDEuODktNi42TDEwMS44OS02LjZRMTAxLjg5LTcuNjUgMTAxLjM3LTguNDUgMTAwLjg0LTkuMjUgOTkuNDQtMTAuMDMgOTguMDQtMTAuOCA5NS4zOS0xMS43TDk1LjM5LTExLjdROTEuNzQtMTIuOTUgODkuOTItMTQuNjggODguMDktMTYuNCA4OC4wOS0xOS40NUw4OC4wOS0xOS40NVE4OC4wOS0yMi40NSA5MC43Mi0yNC41MyA5My4zNC0yNi42IDk3Ljk5LTI2LjZMOTcuOTktMjYuNlExMDAuNDktMjYuNiAxMDIuNDQtMjYuMDggMTA0LjM5LTI1LjU1IDEwNS45NC0yNC43NUwxMDUuOTQtMjQuNzUgMTA0LjY5LTIxLjA1UTEwMy4zNC0yMS44NSAxMDEuNjItMjIuMzUgOTkuODktMjIuODUgOTcuNzktMjIuODVMOTcuNzktMjIuODVROTUuMTktMjIuODUgOTMuODQtMjEuOCA5Mi40OS0yMC43NSA5Mi40OS0xOS41TDkyLjQ5LTE5LjVROTIuNDktMTguMyA5My41NC0xNy40NSA5NC41OS0xNi42IDk3LjY0LTE1LjZMOTcuNjQtMTUuNlExMDIuNTktMTMuOTUgMTA0LjU0LTExLjk1IDEwNi40OS05Ljk1IDEwNi40OS02Ljk1TDEwNi40OS02Ljk1UTEwNi40OS0zLjQ1IDEwMy42Ny0xLjQzIDEwMC44NCAwLjYgOTYuMDkgMC42WiIgZmlsbD0iI2ZmZmZmZiIgZGF0YS1maWxsLXBhbGV0dGUtY29sb3I9InByaW1hcnkiLz48L2c+PC9zdmc+PC9nPjwvc3ZnPjwvZz48L3N2Zz48L2c+PC9zdmc+PC9nPjxnIHRyYW5zZm9ybT0ibWF0cml4KDEsMCwwLDEsMCwxMC45MTg2OTI4NzQ2NzkxMSkiPjxzdmcgdmlld0JveD0iMCAwIDUyLjY1NTg3NTc1Mzc1OTE4IDQ4LjgzMzc2NTU0MzA2MzIxIiBoZWlnaHQ9IjQ4LjgzMzc2NTU0MzA2MzIxIiB3aWR0aD0iNTIuNjU1ODc1NzUzNzU5MTgiPjxnPjxzdmcgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIiB4bWxuczp4bGluaz0iaHR0cDovL3d3dy53My5vcmcvMTk5OS94bGluayIgdmVyc2lvbj0iMS4xIiB4PSIwIiB5PSIwIiB2aWV3Qm94PSIwLjA2NiAyLjIwNDEwNzc1Mzk1MzE0MjYgNzEuMDg5IDY1LjkyODg5MjI0NjA0Njg2IiBlbmFibGUtYmFja2dyb3VuZD0ibmV3IDAgMCA3MS40NjcgNzEuNDY1IiB4bWw6c3BhY2U9InByZXNlcnZlIiBpZD0iaWNvbi0wIiB3aWR0aD0iNTIuNjU1ODc1NzUzNzU5MTgiIGhlaWdodD0iNDguODMzNzY1NTQzMDYzMjEiIGNsYXNzPSJpY29uLWljb24tMCIgZGF0YS1maWxsLXBhbGV0dGUtY29sb3I9ImFjY2VudCIgZmlsbD0iI2ZmZmZmZiI+PHBhdGggZmlsbD0iI2ZmZmZmZiIgZD0iTTExLjc4MSAyMC4xMDhIMTIuMDIyQzUuNTQyIDIwLjEwOCAwLjA2NiAyNS4wMyAwLjA2NiAzMS41MSAwLjA2NiAzNy45OTMgNS41NDIgNDMuMjQ1IDEyLjAyMiA0My4yNDUgMTEuNTE3IDQzLjMxNCAxMS43ODEgNDMuMjQ1IDExLjc4MSA0My4yNDVBMi41NDYgMi41NDYgMCAwIDAgMTQuMzI2IDQwLjY5OFYyMi42NTVBMi41NDYgMi41NDYgMCAwIDAgMTEuNzgxIDIwLjEwOCIgZGF0YS1maWxsLXBhbGV0dGUtY29sb3I9ImFjY2VudCIvPjxwYXRoIGZpbGw9IiNmZmZmZmYiIGQ9Ik02NS45MiAyLjUxMkMzOS44MyAyMC41ODQgMjkuMTUzIDE4LjI5NiAyMi4xOCAxOC40MjZIMjAuNzQyQTIuODYzIDIuODYzIDAgMCAwIDE3Ljg3OSAyMS4yODlWNDIuMTlBMi44NiAyLjg2IDAgMCAwIDIwLjc0MiA0NS4wNTJIMjIuMThDMjQuNjI5IDQ1LjE1NiAyNy44ODkgNDQuNzQ2IDMzLjgzNSA0NS44MzJWNjYuMjdDMzMuODM1IDY3LjI5OSAzNC42NjggNjguMTMzIDM1LjY5OCA2OC4xMzNINDQuNDMyQTEuODY0IDEuODY0IDAgMCAwIDQ2LjI5NSA2Ni4yN1Y0OS42OTZDNTEuOTExIDUyLjA1OCA1OC4xODYgNTUuNjEgNjUuOTIgNjAuOTY5IDY1LjkyIDYwLjk2OSA3MS4xNTUgNjMuMTc4IDcxLjE1NSA1NS43MzVWNy43NDRDNzEuMTU1IDAuMjk4IDY1LjkyIDIuNTEyIDY1LjkyIDIuNTEyIiBkYXRhLWZpbGwtcGFsZXR0ZS1jb2xvcj0iYWNjZW50Ii8+PC9zdmc+PC9nPjwvc3ZnPjwvZz48L3N2Zz48L2c+PC9zdmc+PC9nPjxnPjxwYXRoIGQ9Ik0wIDEyMy42YzAtNjguMjYyIDU1LjMzOC0xMjMuNiAxMjMuNi0xMjMuNiA1Ni40NjEgMCAxMDQuMDggMzcuODU4IDExOC44NTggODkuNTc1bC0yLjU4NSAwYy0xNC43MDMtNTAuMzI4LTYxLjE5NS04Ny4wOTItMTE2LjI3My04Ny4wOTMtNjYuODkxIDAtMTIxLjExOCA1NC4yMjYtMTIxLjExOCAxMjEuMTE4IDAgNjYuODkxIDU0LjIyNiAxMjEuMTE4IDEyMS4xMTggMTIxLjExOCA1NS4wNzggMCAxMDEuNTctMzYuNzY1IDExNi4yNzMtODcuMDkzbDIuNTg1IDBjLTE0Ljc3NyA1MS43MTctNjIuMzk2IDg5LjU3NS0xMTguODU4IDg5LjU3NS02OC4yNjIgMC0xMjMuNi01NS4zMzgtMTIzLjYtMTIzLjZ6IiBmaWxsPSIjZmZmZmZmIiBzdHJva2U9InRyYW5zcGFyZW50IiBkYXRhLWZpbGwtcGFsZXR0ZS1jb2xvcj0idGVydGlhcnkiLz48L2c+PC9zdmc+PC9nPjxkZWZzLz48L3N2Zz4=">
+    {% if title %}
+        <title>Buss - {{ title }}</title>
+    {% else %}
+        <title>Buss Blog</title>
+    {% endif %}
+</head>
+<body>
+    <header class="site-header">
+      <nav class="navbar navbar-expand-md navbar-dark bg-steel fixed-top">
+        <div class="container">
+          <a class="navbar-brand mr-4" href="/">Buzz <ion-icon name="megaphone-outline"></ion-icon></a>
+          <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarToggle" aria-controls="navbarToggle" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+          </button>
+          <div class="collapse navbar-collapse" id="navbarToggle">
+            <div class="navbar-nav mr-auto">
+              <a class="nav-item nav-link" href="{{ url_for('home') }}">Home</a>
+              <a class="nav-item nav-link" href="{{ url_for('about') }}">About</a>
+            </div>
+            <!-- Navbar Right Side -->
+            <div class="navbar-nav">
+              {% if current_user.is_authenticated %}
+                <a class="nav-item nav-link" href="{{ url_for('new_post') }}">New Post</a>
+                <a class="nav-item nav-link" href="{{ url_for('account') }}">Account</a>
+                <a class="nav-item nav-link" href="{{ url_for('logout') }}">Logout</a>
+              {% else %}
+                <a class="nav-item nav-link" href="{{ url_for('login') }}">Login</a>
+                <a class="nav-item nav-link" href="{{ url_for('register') }}">Register</a>
+              {% endif %}
+            </div>
+          </div>
+        </div>
+      </nav>
+    </header>
+    <main role="main" class="container">
+      <div class="row">
+        <div class="col-md-8">
+          {% with messages = get_flashed_messages(with_categories=true) %}
+            {% if messages %}
+              {% for category, message in messages %}
+                <div class="alert alert-{{ category }}">
+                  {{ message }}
+                </div>
+              {% endfor %}
+            {% endif %}
+          {% endwith %}
+          {% block content %}{% endblock %}
+        </div>
+        <div class="col-md-4">
+          <div style="background-color: #fff; transform: translate(0%, -2%);" class="content-section">
+            <h3>Our Sidebar</h3>
+            <p class='text-muted'>You can put any information here you'd like.
+              <ul class="list-group">
+                <li class="list-group-item list-group-item-light">Latest Posts</li>
+                <li class="list-group-item list-group-item-light">Announcements</li>
+                <li class="list-group-item list-group-item-light">Calendars</li>
+                <li class="list-group-item list-group-item-light">etc</li>
+              </ul>
+            </p>
+          </div>
+        </div>
+      </div>
+    </main>
+
+
+    <!-- Optional JavaScript -->
+
+    <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
+    <script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
+    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+</body>
+</html>
